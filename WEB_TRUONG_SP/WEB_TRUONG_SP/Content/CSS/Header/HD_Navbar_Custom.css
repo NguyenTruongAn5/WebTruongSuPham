@@ -1,0 +1,127 @@
+﻿/* Center the navbar container */
+.navbar {
+    justify-content: center;
+    padding: 0;
+}
+
+/* Adjust the navbar items to be centered */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+    .navbar-nav .nav-link {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .navbar-nav .nav-item {
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+    }
+
+        .navbar-nav .nav-item:first-child {
+            border-left: none;
+        }
+
+        .navbar-nav .nav-item:last-child {
+            border-right: none;
+        }
+
+/* Hover effect for nav links */
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #2878b4;
+}
+
+.dropdown-menu {
+    display: none;
+    border-radius: 0;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+    .dropdown-item:hover {
+        background-color: #2878b4;
+        color: #fff;
+    }
+
+/* Header section styling */
+.header-section {
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .header-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #2878b4;
+        transform: skewX(-20deg);
+        transform-origin: bottom left;
+        z-index: -1;
+    }
+
+    .header-section span {
+        margin-right: 10px;
+        text-transform: uppercase;
+    }
+
+    .header-section button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+
+        .header-section button:hover {
+            color: #0056b3;
+        }
+
+/* Unit section row styling */
+.unit-section-row {
+    background-color: #2878b4;
+    color: white;
+    padding: 20px;
+}
+
+    .unit-section-row ul li {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 8px 10px;
+        margin-bottom: 5px;
+        list-style: none;
+    }
+
+        .unit-section-row ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+            .unit-section-row ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+
+    .unit-section-row p {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }

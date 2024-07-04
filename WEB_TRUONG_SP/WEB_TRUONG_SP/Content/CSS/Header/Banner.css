@@ -1,0 +1,74 @@
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container, .row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+    .slide img {
+        width: 100%;
+        height: auto; 
+    }
+
+.prev, .next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50px; 
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+    .prev:hover, .next:hover {
+        color: #2878b4;
+    }
+
+.slideshow-container .slide:first-child {
+    display: block;
+}
+.welcome-banner {
+    background-image: url('../../img/banner/wellcome.jpg');
+    width: 100vw; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 160px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .welcome-banner h1 {
+        color: #fff; 
+        font-size: 2.5rem;
+        padding: 10px 20px;
+        max-width: 80%; 
+    }

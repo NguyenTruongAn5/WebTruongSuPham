@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <link href="~/Content/CSS/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Header/HD_Language.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Header/HD_Navbar_Custom.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Body/BD_Main.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Header/Banner.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Footer.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Content/JS/JS_Banner.js"></script>
+    <title>Index</title>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="language-options">
+                <a href="#">
+                    <img src="https://www.dthu.edu.vn/img/vn.gif" alt="Quốc kỳ Việt Nam" class="flag">
+                    VN
+                </a>
+                <a href="#">
+                    <img src="https://www.dthu.edu.vn/img/en.gif" alt="Quốc kỳ Anh" class="flag">
+                    EN
+                </a>
+            </div>
+        </div>
+        <div class="logo-bar">
+            <a href="#">
+                <img src="~/Content/IMG/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Giới thiệu <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="@Url.Action("SubIndex","Home")">Giới thiệu trường</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("SubIndex","Home")">Tầm nhìn-Sứ mạng</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("SubIndex","Home")">Hội đồng trường</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("SubIndex","Home")">Ban giám hiệu</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("SubIndex","Home")">Cán bộ giảng viên</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("SubIndex","Home")">Sơ đồ tổ chức</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Đảng-Đoàn <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lãnh đạo</a></li>
+                            <li><a class="dropdown-item" href="#">Cán bộ</a></li>
+                            <li><a class="dropdown-item" href="#">Hoạt động</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Đơn vị trực thuộc <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Sư phạm Toán</a></li>
+                            <li><a class="dropdown-item" href="#">Sư phạm Tin</a></li>
+                            <li><a class="dropdown-item" href="#">Sư phạm Khoa học tự nhiên</a></li>
+                            <li><a class="dropdown-item" href="#">Sư phạm Khoa học xã hội</a></li>
+                            <li><a class="dropdown-item" href="#">Sư phạm Tiểu học-Mầm non</a></li>
+                            <li><a class="dropdown-item" href="#">Sư phạm Thể chất-Nghệ thuật</a></li>
+                            <li><a class="dropdown-item" href="#">Sư phạm Chính trị</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tin tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Văn bản</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="col-sm-3 header-section">
+                <span>Đơn vị trực thuộc</span>
+                <button id="btnOpen"><i class="fa fa-chevron-circle-down"></i></button>
+                <button id="btnClose" style="display:none"><i class="fa fa-chevron-circle-up"></i></button>
+            </div>
+        </div>
+
+        <div id="unit-section" class="unit-section-row row" style="display:none">
+            <div class="col-sm-6">
+                <p>Khoa đào tạo</p>
+                <ul>
+                    <li> <a href="#">Khoa Sư phạm Toán - Tin</a></li>
+                    <li> <a href="#">Khoa Sư phạm Khoa học tự nhiên</a></li>
+                    <li> <a href="#">Khoa Sư phạm Khoa học xã hội</a></li>
+                    <li> <a href="#">Khoa Giáo dục Tiểu học - Mầm non</a></li>
+                    <li> <a href="#">Khoa Giáo dục Thể chất - Sư phạm Nghệ thuật</a></li>
+                    <li> <a href="#">Khoa Giáo dục Chính trị</a></li>
+                </ul>
+                <p>Phòng ban</p>
+                <ul>
+                    <li> <a href="#">Phòng Tổ chức cán bộ</a></li>
+                    <li> <a href="#">Phòng Hành chính - Tổng hợp</a></li>
+                    <li> <a href="#">Phòng Công tác sinh viên và Truyền thông</a></li>
+                    <li> <a href="#">Phòng Hợp tác quốc tế</a></li>
+                    <li> <a href="#">Phòng Đào tạo</a></li>
+                    <li> <a href="#">Phòng Thiết bị và Xây dựng Cơ bản</a></li>
+                    <li> <a href="#">Phòng Thanh tra - Pháp chế</a></li>
+                    <li> <a href="#">Phòng Bảo đảm chất lượng</a></li>
+                    <li> <a href="#">Phòng Đào tạo Sau đại học</a></li>
+                    <li> <a href="#">Phòng Khoa học và Công nghệ</a></li>
+                    <li> <a href="#">Phòng Kế hoạch - Tài chính</a></li>
+                    <li> <a href="#">Phòng Công tác Đảng - Đoàn thể</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <p>Trường Sư phạm</p>
+                <ul>
+                    <li> <a href="#">Khoa Sư phạm Toán - Tin</a></li>
+                    <li> <a href="#">Khoa Sư phạm Khoa học tự nhiên</a></li>
+                    <li> <a href="#">Khoa Sư phạm Khoa học xã hội</a></li>
+                    <li> <a href="#">Khoa Giáo dục Tiểu học - Mầm non</a></li>
+                    <li> <a href="#">Khoa Giáo dục Thể chất - Sư phạm Nghệ thuật</a></li>
+                    <li> <a href="#">Khoa Giáo dục Chính trị</a></li>
+                </ul>
+                <p>Trung tâm</p>
+                <ul>
+                    <li> <a href="#">Trung tâm Học liệu Lê Vũ Hùng</a></li>
+                    <li> <a href="#">Trung tâm Dịch vụ</a></li>
+                    <li> <a href="#">Trung tâm Ngoại ngữ và Tin học</a></li>
+                    <li> <a href="#">Trung tâm Thực hành - Thí nghiệm</a></li>
+                    <li> <a href="#">Trung tâm Liên kết đào tạo – Bồi dưỡng nghề</a></li>
+                    <li> <a href="#">Tạp chí Khoa học Đại học Đồng Tháp</a></li>
+                </ul>
+                <p>Trường trực thuộc</p>
+                <ul>
+                    <li> <a href="#">Trường Thực hành Sư phạm Mầm non Hoa Hồng</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="~/Content/IMG/Banner/banner_1.jpg" alt="Banner 1" />
+        </div>
+        <div class="slide">
+            <img src="~/Content/IMG/Banner/banner_2.jpg" alt="Banner 2" />
+        </div>
+        <div class="slide">
+            <img src="~/Content/IMG/Banner/banner_3.jpg" alt="Banner 3" />
+        </div>
+        <a class="prev"><i class="fa fa-chevron-circle-left"></i></a>
+        <a class="next"><i class="fa fa-chevron-circle-right"></i></a>
+    </div>
+
+    <!--Wellcome-->
+    <div class="container-fluid">
+        <div class="row welcome-banner">
+            <h1>Chào mừng bạn đến với DTHU</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 col-mission-vision">
+                <div>
+                    <p><strong>SỨ MẠNG & TẦM NHÌN</strong></p>
+                    <p><strong>Sứ mạng:</strong> Đào tạo nguồn nhân lực trình độ cao, đa lĩnh vực, trong đó khoa học giáo dục và đào tạo giáo viên là nòng cốt; nghiên cứu khoa học và cung cấp các dịch vụ cộng đồng; góp phần phát triển kinh tế - xã hội vùng đồng bằng sông Cửu Long và cả nước.</p>
+                    <p><strong>Tầm nhìn:</strong> Trở thành trung tâm đào tạo và nghiên cứu khoa học có chất lượng cao của Việt Nam và khu vực Đông Nam Á.</p>
+                    <a href="@Url.Action("SubIndex","Home")">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="col-6 col-video">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/8UiunTGcCKU" title="Phan Mạnh Quỳnh Playlist | Viet Nam Music Playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="col-3 col-announcements">
+                <p><strong>THÔNG BÁO</strong></p>
+                <div class="scrollable">
+                    <a href="#">Thông báo Về việc bổ sung hồ sơ dự tuyển viên chức năm 2024  (11/6/2024)</a>
+                    <a href="#">Thông báo Về việc tổ chức thi đánh giá năng lực tiếng Anh theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam, Kỳ thi ngày 29/6/2024 (28/5/2024)</a>
+                    <a href="#">Thông báo Về việc thu học phí học kỳ hè năm học 2023-2024 và học phí nợ đối với sinh viên chính quy hệ Cao đẳng, Đại học (7/5/2024)</a>
+                    <a href="#">Thông báo Về việc tổ chức thi đánh giá năng lực tiếng Anh theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam, Kỳ thi ngày 28/5/2024 (23/4/2024))</a>
+                    <!-- Repeat other links as needed -->
+                </div>
+                <a href="@Url.Action("PageNotification","Home")"> Tất cả thông báo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid top-margin">
+        <div class="row custom-row">
+            <ul class="icon-list">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-home"></i>
+                        <span>Nhà trọ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-certificate"></i>
+                        <span>Thời khóa biểu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-question-circle"></i>
+                        <span>Biểu mẫu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-address-book"></i>
+                        <span>Bồi dưỡng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-battery-half"></i>
+                        <span>Học bổng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-gavel"></i>
+                        <span>Văn bằng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Hướng nghiệp</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid top-margin">
+        <div class="row ">
+            <div class="col-4">
+                <a href="#" class="banner-link" style="background-image: url('../../content/img/banner/htqt.jpg');">
+                    <span>HỢP TÁC QUỐC TẾ</span>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="banner-link" style="background-image: url('../../content/img/banner/thuvien.jpg');">
+                    <span>TT-HV LÊ VŨ HÙNG</span>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="banner-link" style="background-image: url('../../content/img/banner/nhakhoahoc.jpg');">
+                    <span>NHÀ KHOA HỌC</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid top-margin">
+        <div class="row custom-background">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <a class="btn" href="@Url.Action("PageSyctheticActivity","Home")">Tin tức & Sự kiện</a>
+                <a class="btn" href="#">Hợp tác quốc tế</a>
+                <a class="btn" href="#">Báo cáo thường niên</a>
+                <a class="btn" href="#">Tin từ Bộ GD & ĐT</a>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <p class="title-p">TIN TỨC VÀ SỰ KIỆN NỔI BẬT</p>
+            <div class="col-4 custom-box">
+                <a href="#">
+                    <img src="~/Content/IMG/Banner/item_1.jpg" class="custom-img" />
+                    <div class="bg-custom-box">
+                        <p>Tuổi trẻ Đại học Đồng Tháp ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024</p>
+                        <span>Ngày 08/6, tại Giảng đường 1, Đoàn Thanh niên - Hội Sinh viên Trường Đại học Đồng Tháp tổ chức Lễ ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024. Chương trình đã diễn ra trong không khí hân hoan và đầy nhiệt huyết, thu hút sự tham gia đông đảo đoàn viên, thanh niên của Trường, đánh dấu sự khởi đầu cho một mùa hè đầy ý nghĩa và cống hiến</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">11/09/2024</i>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye">66</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 custom-box">
+                <a href="#">
+                    <img src="~/Content/IMG/Banner/item_1.jpg" class="custom-img" />
+                    <div class="bg-custom-box">
+                        <p>Tuổi trẻ Đại học Đồng Tháp ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024</p>
+                        <span>Ngày 08/6, tại Giảng đường 1, Đoàn Thanh niên - Hội Sinh viên Trường Đại học Đồng Tháp tổ chức Lễ ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024. Chương trình đã diễn ra trong không khí hân hoan và đầy nhiệt huyết, thu hút sự tham gia đông đảo đoàn viên, thanh niên của Trường, đánh dấu sự khởi đầu cho một mùa hè đầy ý nghĩa và cống hiến</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">11/09/2024</i>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye">66</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 custom-box">
+                <a href="#">
+                    <img src="~/Content/IMG/Banner/item_1.jpg" class="custom-img" />
+                    <div class="bg-custom-box">
+                        <p>Tuổi trẻ Đại học Đồng Tháp ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024</p>
+                        <span>Ngày 08/6, tại Giảng đường 1, Đoàn Thanh niên - Hội Sinh viên Trường Đại học Đồng Tháp tổ chức Lễ ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024. Chương trình đã diễn ra trong không khí hân hoan và đầy nhiệt huyết, thu hút sự tham gia đông đảo đoàn viên, thanh niên của Trường, đánh dấu sự khởi đầu cho một mùa hè đầy ý nghĩa và cống hiến</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">11/09/2024</i>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye">66</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <p class="title-p">CÁC HOẠT ĐỘNG TẠI TRƯỜNG SƯ PHẠM</p>
+            <div class="col-4 custom-box">
+                <a href="#">
+                    <img src="~/Content/IMG/Banner/activity.jpg" class="custom-img"/>
+                    <div class="bg-custom-box">
+                        <p>Tuổi trẻ khoa Ngoại ngữ: khơi dậy sự hứng thú của thanh thiếu nhi trong việc học tiếng Anh</p>
+                        <span>Hướng đến công tác hỗ trợ, nâng cao năng lực tiếng Anh và hội nhập quốc tế cho thanh thiếu nhi tỉnh Đồng Tháp, đặc biệt là các em học sinh, ngày 30/6/2023, tại trường THCS Thị trấn Mỹ Thọ, Tuổi trẻ Khoa Ngoại ngữ - Trường Đại học Đồng Tháp phối hợp BCH Đoàn xã Mỹ Thọ, huyện Cao Lãnh tổ chức lớp học tiếng Anh trong chuỗi các hoạt động chiến dịch “Sinh viên tình nguyện hè” năm 2023 đã thu hút đông đảo thanh thiếu nhi tham gia.</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">11/09/2024</i>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye">66</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 custom-box">
+                <a href="#">
+                    <img src="~/Content/IMG/Banner/activity.jpg" class="custom-img" />
+                    <div class="bg-custom-box">
+                        <p>Tuổi trẻ Đại học Đồng Tháp ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024</p>
+                        <span>Ngày 08/6, tại Giảng đường 1, Đoàn Thanh niên - Hội Sinh viên Trường Đại học Đồng Tháp tổ chức Lễ ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024. Chương trình đã diễn ra trong không khí hân hoan và đầy nhiệt huyết, thu hút sự tham gia đông đảo đoàn viên, thanh niên của Trường, đánh dấu sự khởi đầu cho một mùa hè đầy ý nghĩa và cống hiến</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">11/09/2024</i>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye">66</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 custom-box">
+                <a href="#">
+                    <img src="~/Content/IMG/Banner/activity.jpg" class="custom-img" />
+                    <div class="bg-custom-box">
+                        <p>Tuổi trẻ Đại học Đồng Tháp ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024</p>
+                        <span>Ngày 08/6, tại Giảng đường 1, Đoàn Thanh niên - Hội Sinh viên Trường Đại học Đồng Tháp tổ chức Lễ ra quân Chiến dịch Sinh viên tình nguyện hè năm 2024. Chương trình đã diễn ra trong không khí hân hoan và đầy nhiệt huyết, thu hút sự tham gia đông đảo đoàn viên, thanh niên của Trường, đánh dấu sự khởi đầu cho một mùa hè đầy ý nghĩa và cống hiến</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">11/09/2024</i>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye">66</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Giới thiệu về DThU</h5>
+                    <p>Trường Đại học Đồng Tháp là trường đại học công lập, đào tạo đa ngành, đa lĩnh vực, trực thuộc Bộ Giáo dục và Đào tạo, được thành lập ngày 10/01/2003 theo Quyết định số 08/2003/QĐ-TTg của Thủ tướng Chính phủ và Công văn số 5830/VPCP-KGVX ngày 04/9/2008 về việc đổi tên Trường ĐHSP Đồng Tháp thành Trường Đại học Đồng Tháp. <a href="#">Chi tiết</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Chúng tôi tại</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-book"></i> Thư viện số</a></li>
+                        <li><a href="#"><i class="fa fa-certificate"></i> Nhà khoa học</a></li>
+                        <li><a href="#"><i class="fa fa-globe"></i> Hợp tác quốc tế</a></li>
+                        <li><a href="#"><i class="fa fa-graduation-cap"></i> Tuyển sinh</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liên hệ</h5>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa fa-map-marker"></i> 783, Phạm Hữu Lầu, P.6, Tp.Cao Lãnh, Đồng Tháp
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i> <a href="mailto:dhdt@dthu.edu.vn">dhdt@dthu.edu.vn</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i> 0277 388 1518
+                        </li>
+                        <li>
+                            <i class="fa fa-fax"></i> 0277 388 1713
+                        </li>
+                        <li>
+                            <i class="fa fa-facebook"></i> <a href="https://www.facebook.com/dongthapuni" target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 text-center footer">
+                    <p>&copy; 2024 Trường Đại học Đồng Tháp. Phát triển bởi XYZ</p>
+                    <p>Đang online: 13665 - Đã truy cập: 47068376</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btnOpen").click(function () {
+                $("#unit-section").fadeIn("slow");
+                $("#btnClose").show();
+                $("#btnOpen").hide();
+            });
+
+            $("#btnClose").click(function () {
+                $("#unit-section").fadeOut("slow");
+                $("#btnClose").hide();
+                $("#btnOpen").show();
+            });
+        });
+    </script>
+
+</body>
+</html>
+

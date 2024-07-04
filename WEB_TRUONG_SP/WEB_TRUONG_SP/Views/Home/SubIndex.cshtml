@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <link href="~/Content/CSS/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Header/HD_Language.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Header/HD_Navbar_Custom.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Body/BD_Main.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Header/Banner.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Footer.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Body/BD_SubIndex.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Content/JS/JS_Banner.js"></script>
+    <title>TRANG CON</title>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="language-options">
+                <a href="#">
+                    <img src="https://www.dthu.edu.vn/img/vn.gif" alt="Quốc kỳ Việt Nam" class="flag">
+                    VN
+                </a>
+                <a href="#">
+                    <img src="https://www.dthu.edu.vn/img/en.gif" alt="Quốc kỳ Anh" class="flag">
+                    EN
+                </a>
+            </div>
+        </div>
+        <div class="logo-bar">
+            <a href="@Url.Action("Index","Home")">
+                <img src="~/Content/IMG/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Giới thiệu <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Giới thiệu trường</a></li>
+                            <li><a class="dropdown-item" href="#">Ban giám hiệu</a></li>
+                            <li><a class="dropdown-item" href="#">Cán bộ giảng viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Đảng <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lãnh đạo</a></li>
+                            <li><a class="dropdown-item" href="#">Cán bộ</a></li>
+                            <li><a class="dropdown-item" href="#">Hoạt động</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Đoàn <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lãnh đạo</a></li>
+                            <li><a class="dropdown-item" href="#">Cán bộ</a></li>
+                            <li><a class="dropdown-item" href="#">Hoạt động</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="col-sm-3 header-section">
+                <span>Đơn vị trực thuộc</span>
+                <button id="btnOpen"><i class="fa fa-chevron-circle-down"></i></button>
+                <button id="btnClose" style="display:none"><i class="fa fa-chevron-circle-up"></i></button>
+            </div>
+        </div>
+
+        <div id="unit-section" class="unit-section-row row" style="display:none">
+            <div class="col-sm-6">
+                <p>Khoa đào tạo</p>
+                <ul>
+                    <li> <a href="#">Khoa Ngoại ngữ</a></li>
+                    <li> <a href="#">Khoa Công nghệ số và Kỹ thuật</a></li>
+                    <li> <a href="#">Khoa Kinh tế - Luật</a></li>
+                    <li> <a href="#">Khoa Nông nghiệp, Tài nguyên và Môi trường</a></li>
+                    <li> <a href="#">Khoa Văn hóa - Du lịch và Công tác xã hội</a></li>
+                </ul>
+                <p>Phòng ban</p>
+                <ul>
+                    <li> <a href="#">Phòng Tổ chức cán bộ</a></li>
+                    <li> <a href="#">Phòng Hành chính - Tổng hợp</a></li>
+                    <li> <a href="#">Phòng Công tác sinh viên và Truyền thông</a></li>
+                    <li> <a href="#">Phòng Hợp tác quốc tế</a></li>
+                    <li> <a href="#">Phòng Đào tạo</a></li>
+                    <li> <a href="#">Phòng Thiết bị và Xây dựng Cơ bản</a></li>
+                    <li> <a href="#">Phòng Thanh tra - Pháp chế</a></li>
+                    <li> <a href="#">Phòng Bảo đảm chất lượng</a></li>
+                    <li> <a href="#">Phòng Đào tạo Sau đại học</a></li>
+                    <li> <a href="#">Phòng Khoa học và Công nghệ</a></li>
+                    <li> <a href="#">Phòng Kế hoạch - Tài chính</a></li>
+                    <li> <a href="#">Phòng Công tác Đảng - Đoàn thể</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <p>Trường Sư phạm</p>
+                <ul>
+                    <li> <a href="#">Khoa Sư phạm Toán - Tin</a></li>
+                    <li> <a href="#">Khoa Sư phạm Khoa học tự nhiên</a></li>
+                    <li> <a href="#">Khoa Sư phạm Khoa học xã hội</a></li>
+                    <li> <a href="#">Khoa Giáo dục Tiểu học - Mầm non</a></li>
+                    <li> <a href="#">Khoa Giáo dục Thể chất - Sư phạm Nghệ thuật</a></li>
+                    <li> <a href="#">Khoa Giáo dục Chính trị</a></li>
+                </ul>
+                <p>Trung tâm</p>
+                <ul>
+                    <li> <a href="#">Trung tâm Học liệu Lê Vũ Hùng</a></li>
+                    <li> <a href="#">Trung tâm Dịch vụ</a></li>
+                    <li> <a href="#">Trung tâm Ngoại ngữ và Tin học</a></li>
+                    <li> <a href="#">Trung tâm Thực hành - Thí nghiệm</a></li>
+                    <li> <a href="#">Trung tâm Liên kết đào tạo – Bồi dưỡng nghề</a></li>
+                    <li> <a href="#">Tạp chí Khoa học Đại học Đồng Tháp</a></li>
+                </ul>
+                <p>Trường trực thuộc</p>
+                <ul>
+                    <li> <a href="#">Trường Thực hành Sư phạm Mầm non Hoa Hồng</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Wellcome-->
+    <div class="container-fluid">
+        <div class="row welcome-banner">
+            <h1>Chào mừng bạn đến với DTHU</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 custom-sidebar">
+                CÓ THỂ BẠN QUAN TÂM
+
+                <ul class="custom-list">
+                    <li><a href="#">Giới thiệu về DThU</a></li>
+                    <li><a href="#">Sứ mạng, Tầm nhìn, Triết lý giáo dục và Hệ giá trị cốt lõi</a></li>
+                    <li><a href="#">Thông điệp của Hiệu trưởng</a></li>
+                    <li><a href="#">Hội đồng trường</a></li>
+                    <li><a href="#">Ban Giám hiệu</a></li>
+                    <li><a href="#">Hội đồng khoa học</a></li>
+                    <li><a href="#">Góp ý - Hiến kế</a></li>
+                    <li><a href="#">Sơ đồ tổ chức</a></li>
+                    <li><a href="#">Ca khúc Truyền thống</a></li>
+                    <li><a href="#">Đảng - Đoàn thể</a></li>
+                </ul>
+            </div>
+            <div class="col-8 custom-content">
+                <div class="date-view">
+                    <div>
+                        <i class="fa fa-calendar">11/09/2024</i>
+                    </div>
+                    <div>
+                        <i class="fa fa-eye">66</i>
+                    </div>
+                </div>
+                <div class="content-wrap">
+                    <p class="content-title">Giới thiệu về Trường Đại học Đồng Tháp</p>
+                    <span class="content-text">
+                        Trường Đại học Đồng Tháp là trường đại học công lập, đào tạo đa ngành, đa lĩnh vực, trực thuộc Bộ Giáo dục và Đào tạo, được thành lập ngày 10/01/2003 theo Quyết định số 08/2003/QĐ-TTg của Thủ tướng Chính phủ và Công văn số 5830/VPCP-KGVX ngày 04/9/2008 về việc đổi tên Trường ĐHSP Đồng Tháp thành Trường Đại học Đồng Tháp.
+                        Nhiệm vụ và Quyền hạn
+                        - Xây dựng chiến lược, kế hoạch phát triển cơ sở giáo dục đại học.
+                        - Triển khai hoạt động đào tạo, khoa học và công nghệ, hợp tác quốc tế, bảo đảm chất lượng giáo dục đại học.
+                        - Phát triển các chương trình đào tạo theo mục tiêu xác định; bảo đảm sự liên thông giữa các chương trình và trình độ đào tạo.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Giới thiệu về DThU</h5>
+                    <p>Trường Đại học Đồng Tháp là trường đại học công lập, đào tạo đa ngành, đa lĩnh vực, trực thuộc Bộ Giáo dục và Đào tạo, được thành lập ngày 10/01/2003 theo Quyết định số 08/2003/QĐ-TTg của Thủ tướng Chính phủ và Công văn số 5830/VPCP-KGVX ngày 04/9/2008 về việc đổi tên Trường ĐHSP Đồng Tháp thành Trường Đại học Đồng Tháp. <a href="#">Chi tiết</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Chúng tôi tại</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-book"></i> Thư viện số</a></li>
+                        <li><a href="#"><i class="fa fa-user-graduate"></i> Nhà khoa học</a></li>
+                        <li><a href="#"><i class="fa fa-globe"></i> Hợp tác quốc tế</a></li>
+                        <li><a href="#"><i class="fa fa-graduation-cap"></i> Tuyển sinh</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liên hệ</h5>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa fa-map-marker"></i> 783, Phạm Hữu Lầu, P.6, Tp.Cao Lãnh, Đồng Tháp
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i> <a href="mailto:dhdt@dthu.edu.vn">dhdt@dthu.edu.vn</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i> 0277 388 1518
+                        </li>
+                        <li>
+                            <i class="fa fa-fax"></i> 0277 388 1713
+                        </li>
+                        <li>
+                            <i class="fa fa-facebook"></i> <a href="https://www.facebook.com/dongthapuni" target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 text-center footer">
+                    <p>&copy; 2024 Trường Đại học Đồng Tháp. Phát triển bởi XYZ</p>
+                    <p>Đang online: 13665 - Đã truy cập: 47068376</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btnOpen").click(function () {
+                $("#unit-section").fadeIn("slow");
+                $("#btnClose").show();
+                $("#btnOpen").hide();
+            });
+
+            $("#btnClose").click(function () {
+                $("#unit-section").fadeOut("slow");
+                $("#btnClose").hide();
+                $("#btnOpen").show();
+            });
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,274 @@
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+.container-fluid, .row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+}
+
+.col-3, .col-6 {
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+.col-mission-vision {
+    width: 25%;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -10px;
+}
+
+.col-video {
+    width: 50%;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+}
+
+    .col-video iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+    }
+
+.col-announcements {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+    .col-announcements .scrollable a,
+    .col-announcements a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+        .col-announcements .scrollable a:hover,
+        .col-announcements a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+.scrollable {
+    max-height: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+    margin-top: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.7) rgba(0, 0, 0, 0.3);
+    scrollbar-width: thin;
+}
+
+    .scrollable::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .scrollable::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .scrollable::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+.scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.7);
+}
+/*CSS icon*/
+.icon-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 8px;
+}
+
+    .icon-list li {
+        text-align: center;
+    }
+
+        .icon-list li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .icon-list li i {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: #007bff; 
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .icon-list li span {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .icon-list li:hover {
+            color: rgba(0, 123, 255, 0.7)
+        }
+
+.custom-row {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.top-margin {
+    margin: 16px;
+}
+
+
+.banner-link {
+    display: block;
+    position: relative;
+    height: 200px; 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    overflow: hidden; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+    .banner-link:hover {
+        transform: translateY(4px); 
+        filter: brightness(85%); 
+    }
+
+    .banner-link span {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+
+/*CSS BTN*/
+.container-fluid .row .col-8 a.btn {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    width: 200px;
+    border-radius: 0;
+    margin-top: 16%;
+    height: 80px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .container-fluid .row .col-8 a.btn:hover {
+        background-color: #0056b3;
+        color: #e6f7ff; 
+    }
+
+.custom-background {
+    background-image: url('../../img/banner/bgframe.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-box {
+    width: 400px;
+    margin: 8px;
+    padding: 8px;
+    box-sizing: border-box; 
+}
+
+.bg-custom-box {
+    background-color: #fff;
+    border-top: 5px solid #007bff; 
+    padding: 12px;
+    transition: background-color 0.3s;
+}
+
+    .bg-custom-box p, .bg-custom-box span {
+        margin: 0 0 10px 0;
+    }
+
+    .bg-custom-box:hover {
+        background-color: #007bff; 
+        color: #fff;
+    }
+    .bg-custom-box p{
+        font-weight:bold;
+    }
+    .date-custom {
+        display: flex;
+        justify-content: space-between; 
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .date-custom i {
+        display: flex;
+        align-items: center;
+    }
+
+        .date-custom i.fa-calendar::before, .date-custom i.fa-eye::before {
+            margin-right: 5px; 
+        }
+
+.custom-box a {
+    text-decoration: none;
+      color: inherit; 
+}
+
+    .col-4 a:hover .bg-custom-box {
+        background-color: #007bff; 
+        color: #fff; 
+    }
+
+        .col-4 a:hover .bg-custom-box p, .col-4 a:hover .bg-custom-box span {
+            color: white; 
+        }
+
+.custom-img {
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+}
+
+.title-p {
+    text-align: center; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    border-top: 2px solid #007bff; 
+    border-bottom: 2px solid #007bff; 
+    padding: 10px 0;
+}
+

@@ -1,0 +1,80 @@
+﻿.footer {
+    background-color: #2878b4; /* Đổi màu nền thành xanh */
+    color: #ffffff; /* Đổi màu chữ thành trắng */
+    padding: 40px 0;
+    border-top: 1px solid #dee2e6;
+}
+
+    .footer h5 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer p, .footer a, .footer address {
+        font-size: 14px;
+        color: #ffffff; /* Màu chữ trắng */
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: #ffffff; /* Màu chữ trắng */
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #d4e1f4; /* Màu chữ khi hover */
+        }
+
+    .footer ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+    .footer address {
+        font-style: normal;
+        line-height: 1.5;
+    }
+
+    .footer .row:last-child {
+        margin-top: 20px;
+    }
+
+    .footer .text-center p {
+        margin-bottom: 5px;
+    }
+.contact-info {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+    .contact-info li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+        .contact-info li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-info li i {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+        }
+
+        .contact-info li a {
+            text-decoration: none;
+            color: inherit;
+        }
+.footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px; /* Optional: add padding to separate content from border */
+}
