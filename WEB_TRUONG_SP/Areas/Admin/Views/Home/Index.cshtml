@@ -1,0 +1,97 @@
+﻿@model IEnumerable<WEB_TRUONG_SP.Models.MenuModel>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+}
+<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: #e9ecef;
+    }
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+</style>
+<!-- Topbar -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+    <!-- Topbar Search -->
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                   aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fa fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+        <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-search fa-fw"></i>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                 aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small"
+                               placeholder="Search for..." aria-label="Search"
+                               aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fa fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- End of Topbar -->
+<h2>Quản lý Menu</h2>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tên Menu</th>
+                <th scope="col">Ngày Tạo</th>
+                <th scope="col">Xóa</th>
+                <th scope="col">Sửa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null) { return; }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.Name</td>
+                    <td>@item.CreateDate</td>
+                    <td><a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                    <td><a href="#" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="display:flex; gap:10px">
+        <a href="#" class="btn btn-success"><i class="fa fa-plus"></i></a>
+        <a href="#" class="btn btn-warning"><i class="fa fa-trash"></i></a>
+    </div>
+</div>
+

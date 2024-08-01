@@ -1,0 +1,128 @@
+﻿
+@model PagedList.IPagedList<WEB_TRUONG_SP.Models.Department>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Trực thuộc";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+}
+<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: #e9ecef;
+    }
+</style>
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+    <!-- Topbar Search -->
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+          action="@Url.Action("Search", "Department", new {area ="Admin"})" method="get">
+        <div class="input-group">
+            <input type="text" name="searchString" class="form-control bg-light border-0 small"
+                   placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+        <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-search fa-fw"></i>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                 aria-labelledby="searchDropdown">
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+                      action="@Url.Action("Search", "Department", new {area = "Admin"})" method="get">
+                    <div class="input-group">
+                        <input type="text" name="searchString" class="form-control bg-light border-0 small"
+                               placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- End of Topbar -->
+<h2>Quản lý đơn vị trực thuộc</h2>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tên đơn vị</th>
+                <th scope="col">Loại</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Xóa</th>
+                <th scope="col">Sửa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null) { return; }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.Name</td>
+                    <td>@item.Type</td>
+                    <td>@item.CreateDate</td>
+                    <td>
+                        <a href="@Url.Action("Remove", "Department", new { area = "Admin", id = item.ID })" class="btn btn-danger"
+                           onclick="return confirmDelete('@item.ID')">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit","Department",
+                                new { area = "Admin", id = item.ID })" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="display:flex; gap:10px">
+        <a href="@Url.Action("Add","Department",
+                                new { area = "Admin"})" class="btn btn-success">
+            <i class="fa fa-plus"></i>
+        </a>
+        <a href="@Url.Action("RestoreIndex","Department",
+                                new { area = "Admin"})" class="btn btn-primary">
+            <i class="fa fa-refresh"></i>
+        </a>
+    </div>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new string[] { "page-item" },
+    UlElementClasses = new[] { "pagination" },
+})
+
+
+<script type="text/javascript">
+    function confirmDelete(itemId) {
+        if (confirm("Bạn có chắc muốn xóa đơn vị này không?")) {
+            window.location.href = '@Url.Action("Remove", "Department", new { area = "Admin" })' + '/' + itemId;
+        }
+        return false;
+    }
+</script>
+

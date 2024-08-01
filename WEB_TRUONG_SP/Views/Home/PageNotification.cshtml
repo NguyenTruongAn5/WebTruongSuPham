@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<WEB_TRUONG_SP.Models.News>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Thông báo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Wellcome-->
+<div class="container-fluid">
+    <div class="row welcome-banner">
+        <h1>Chào mừng bạn đến với DTHU</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 custom-sidebar">
+            CÓ THỂ BẠN QUAN TÂM
+
+            <ul class="custom-list">
+                @foreach (var item in ViewBag.Menu)
+                {
+                    <li>
+                        <a href="@Url.Action("SubIndex","Home", new {id=item.ID})">
+                            @item.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="col-8 custom-content">
+            <div class="custom-search">
+                <input type="search" placeholder="Bạn muốn tìm gì?" />
+                <button><i class="fa fa-search"></i></button>
+            </div>
+
+            @foreach (var item in Model)
+            {
+                <div class="custom-item-content">
+                    <div class="box-date-custom">
+                        <span>@item.PublishDate</span>
+                    </div>
+                    <div class="box-content-item">
+                        <a href="@Url.Action("SubIndex", "Home",
+                                new {id = item.IDMenu, idSub = item.IDSubMenu}) ">@item.Title </a>
+                            </div>
+                        </div>
+
+                    }
+            @Html.PagedListPager(Model, page => Url.Action("PageNotification", new { page }), new PagedListRenderOptions
+            {
+                LiElementClasses = new string[] { "page-item" },
+                UlElementClasses = new[] { "pagination" },
+            })
+
+        </div>
+    </div>
+</div>
+
+

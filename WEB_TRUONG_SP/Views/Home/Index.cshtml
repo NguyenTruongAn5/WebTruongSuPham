@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slideshow-container">
+    @foreach (var item in ViewBag.Banner)
+    {
+        <div class="slide">
+            <img src=@Url.Content(@item.ImgPath) width="1920" alt="@item.Name" />
+        </div>
+    }
+    <a class="prev"><i class="fa fa-chevron-circle-left"></i></a>
+    <a class="next"><i class="fa fa-chevron-circle-right"></i></a>
+</div>
+
+<!--Wellcome-->
+<div class="container-fluid">
+    <div class="row welcome-banner">
+        <h1>Chào mừng bạn đến với DTHU</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 col-mission-vision">
+            <div>
+                <p><strong>SỨ MẠNG & TẦM NHÌN</strong></p>
+                <p><strong>Sứ mạng:</strong> Đào tạo nguồn nhân lực trình độ cao, đa lĩnh vực, trong đó khoa học giáo dục và đào tạo giáo viên là nòng cốt; nghiên cứu khoa học và cung cấp các dịch vụ cộng đồng; góp phần phát triển kinh tế - xã hội vùng đồng bằng sông Cửu Long và cả nước.</p>
+                <p><strong>Tầm nhìn:</strong> Trở thành trung tâm đào tạo và nghiên cứu khoa học có chất lượng cao của Việt Nam và khu vực Đông Nam Á.</p>
+                <a href="@Url.Action("SubIndex","Home", new {id=1})">Xem chi tiết</a>
+            </div>
+        </div>
+        <div class="col-6 col-video">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/8UiunTGcCKU" title="Phan Mạnh Quỳnh Playlist | Viet Nam Music Playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="col-3 col-announcements">
+            <p><strong>THÔNG BÁO</strong></p>
+            <div class="scrollable">
+                @foreach (var item in ViewBag.NewsNofiFull)
+                {
+                    <a href="@Url.Action("SubIndex", "Home",
+                                new {id = item.IDMenu, idSub = item.IDSubMenu}) ">@item.Title  (@item.PublishDate)</a>
+
+                }
+            </div>
+            <a href="@Url.Action("PageNotification","Home", new {type="Thông báo"})"> Tất cả thông báo >>></a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid top-margin">
+    <div class="row custom-row">
+        <ul class="icon-list">
+            <li>
+                <a href="#">
+                    <i class="fa fa-home"></i>
+                    <span>Nhà trọ</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-certificate"></i>
+                    <span>Thời khóa biểu</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-question-circle"></i>
+                    <span>Biểu mẫu</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-address-book"></i>
+                    <span>Bồi dưỡng</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-battery-half"></i>
+                    <span>Học bổng</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-gavel"></i>
+                    <span>Văn bằng</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Hướng nghiệp</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-fluid top-margin">
+    <div class="row ">
+        <div class="col-4">
+            <a href="#" class="banner-link" style="background-image: url('../../content/img/banner/htqt.jpg');">
+                <span>HỢP TÁC QUỐC TẾ</span>
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="#" class="banner-link" style="background-image: url('../../content/img/banner/thuvien.jpg');">
+                <span>TT-HV LÊ VŨ HÙNG</span>
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="#" class="banner-link" style="background-image: url('../../content/img/banner/nhakhoahoc.jpg');">
+                <span>NHÀ KHOA HỌC</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid top-margin">
+    <div class="row custom-background">
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <p class="title-p">TIN TỨC VÀ SỰ KIỆN NỔI BẬT</p>
+        @foreach (var item in ViewBag.NewsActi)
+        {
+            <div class="col-4 custom-box">
+                <a href="#">
+                    @if (item.ImagePath != null)
+                    {
+                        <img src=@Url.Content(item.ImagePath) class="custom-img" />
+                    }
+                    else
+                    {
+                        <img src="~/Content/IMG/Logo_Square.png" class="custom-img" />
+                    }
+                    <div class="bg-custom-box">
+                        <p>@item.Title</p>
+                        <span>@Html.Raw(@item.Summary)</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">@item.PublishDate</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+        <a class="btn" href="@Url.Action("PageSyctheticActivity","Home", new {type="Hoạt động"})">Xem thêm >>></a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <p class="title-p">CÁC HOẠT ĐỘNG TẠI TRƯỜNG SƯ PHẠM</p>
+        @foreach (var item in ViewBag.NewsNofi)
+        {
+            <div class="col-4 custom-box">
+                <a href="#">
+                    @if (item.ImagePath != null)
+                    {
+                        <img src=@Url.Content(item.ImagePath) class="custom-img" />
+                    }
+                    else
+                    {
+                        <img src="~/Content/IMG/Logo_Square.png" class="custom-img" />
+                    }
+                    <div class="bg-custom-box">
+                        <p>@item.Title</p>
+                        <span>@Html.Raw(@item.Summary)</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">@item.PublishDate</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+
+        <a class="btn" href="@Url.Action("PageNotification","Home", new {type="Hoạt động"})">Xem thêm >>></a>
+    </div>
+</div>
+
+
+

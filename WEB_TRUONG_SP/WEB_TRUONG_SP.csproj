@@ -1,0 +1,676 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C80B439-B2DB-4F8A-AAA9-BB4BEE43DC8E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WEB_TRUONG_SP</RootNamespace>
+    <AssemblyName>WEB_TRUONG_SP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeKit, Version=4.7.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.7.1\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Contents\CSS\sb-admin-2.css" />
+    <Content Include="Areas\Contents\CSS\sb-admin-2.min.css" />
+    <Content Include="Areas\Contents\IMGS\undraw_posting_photo.svg" />
+    <Content Include="Areas\Contents\IMGS\undraw_profile.svg" />
+    <Content Include="Areas\Contents\IMGS\undraw_profile_1.svg" />
+    <Content Include="Areas\Contents\IMGS\undraw_profile_2.svg" />
+    <Content Include="Areas\Contents\IMGS\undraw_profile_3.svg" />
+    <Content Include="Areas\Contents\IMGS\undraw_rocket.svg" />
+    <Content Include="Areas\Contents\JS\demo\chart-area-demo.js" />
+    <Content Include="Areas\Contents\JS\demo\chart-bar-demo.js" />
+    <Content Include="Areas\Contents\JS\demo\chart-pie-demo.js" />
+    <Content Include="Areas\Contents\JS\demo\datatables-demo.js" />
+    <Content Include="Areas\Contents\JS\sb-admin-2.js" />
+    <Content Include="Areas\Contents\JS\sb-admin-2.min.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5-content.css" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5-editor.css" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5.css" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\af.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\af.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ar.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ar.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ast.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ast.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\az.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\az.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bg.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bg.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bn.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bn.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bs.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bs.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ca.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ca.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\cs.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\cs.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\da.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\da.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\de-ch.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\de-ch.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\de.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\de.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\el.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\el.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en-au.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en-au.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en-gb.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en-gb.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\eo.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\eo.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\es-co.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\es-co.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\es.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\es.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\et.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\et.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\eu.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\eu.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fa.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fa.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fi.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fi.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fr.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fr.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\gl.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\gl.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\gu.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\gu.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\he.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\he.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hi.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hi.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hr.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hr.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hu.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hu.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hy.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hy.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\id.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\id.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\it.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\it.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ja.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ja.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\jv.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\jv.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\kk.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\kk.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\km.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\km.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\kn.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\kn.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ko.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ko.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ku.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ku.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\lt.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\lt.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\lv.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\lv.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ms.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ms.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\nb.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\nb.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ne.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ne.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\nl.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\nl.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\no.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\no.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\oc.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\oc.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pl.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pl.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pt-br.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pt-br.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pt.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pt.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ro.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ro.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ru.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ru.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\si.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\si.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sk.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sk.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sl.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sl.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sq.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sq.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sr-latn.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sr-latn.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sr.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sr.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sv.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sv.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\th.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\th.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ti.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ti.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tk.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tk.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tr.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tr.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tt.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tt.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ug.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ug.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\uk.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\uk.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ur.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ur.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\uz.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\uz.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\vi.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\vi.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\zh-cn.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\zh-cn.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\zh.js" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\translations\zh.umd.js" />
+    <Content Include="Content\ckeditor5-42.0.1\index.html" />
+    <Content Include="Content\CSS\Body\BD_Main.css" />
+    <Content Include="Content\CSS\Body\BD_SubIndex.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.rtl.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.min.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.rtl.css" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.rtl.min.css" />
+    <Content Include="Content\CSS\Footer.css" />
+    <Content Include="Content\CSS\Header\Banner.css" />
+    <Content Include="Content\CSS\Header\HD_Language.css" />
+    <Content Include="Content\CSS\Header\HD_Navbar_Custom.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\IMG\Banner\activity.jpg" />
+    <Content Include="Content\IMG\Banner\banner_1.jpg" />
+    <Content Include="Content\IMG\Banner\banner_2.jpg" />
+    <Content Include="Content\IMG\Banner\banner_3.jpg" />
+    <Content Include="Content\IMG\Banner\bgframe.jpg" />
+    <Content Include="Content\IMG\Banner\htqt.jpg" />
+    <Content Include="Content\IMG\Banner\item_1.jpg" />
+    <Content Include="Content\IMG\Banner\nhakhoahoc.jpg" />
+    <Content Include="Content\IMG\Banner\thuvien.jpg" />
+    <Content Include="Content\IMG\Banner\wellcome.jpg" />
+    <Content Include="Content\IMG\logo.png" />
+    <Content Include="Content\IMG\Logo_Square.png" />
+    <Content Include="Content\JS\JS_Banner.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayoutPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\RestoreIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Search.cshtml" />
+    <Content Include="Areas\Admin\Views\SubMenu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SubMenu\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\SubMenu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SubMenu\RestoreIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\SubMenu\Search.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Add.cshtml" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5.css.map" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5.js.map" />
+    <Content Include="Content\ckeditor5-42.0.1\ckeditor5\ckeditor5.umd.js.map" />
+    <Content Include="Content\ckeditor5-42.0.1\LICENSE.md" />
+    <Content Include="Content\ckeditor5-42.0.1\README.md" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\RestoreIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Search.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\RestoreIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Search.cshtml" />
+    <Content Include="Areas\Admin\Views\Lecturer\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Lecturer\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Lecturer\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Lecturer\RestoreIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Lecturer\Search.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\CreateAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\RestoreIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Search.cshtml" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LecturerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SubMenuController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SecurityHelper.cs" />
+    <Compile Include="Controllers\SendMailHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407110137280_add-data.cs" />
+    <Compile Include="Migrations\202407110137280_add-data.designer.cs">
+      <DependentUpon>202407110137280_add-data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407110359471_update.cs" />
+    <Compile Include="Migrations\202407110359471_update.designer.cs">
+      <DependentUpon>202407110359471_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407190135104_updateRequired.cs" />
+    <Compile Include="Migrations\202407190135104_updateRequired.designer.cs">
+      <DependentUpon>202407190135104_updateRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407190147240_updateLecturer.cs" />
+    <Compile Include="Migrations\202407190147240_updateLecturer.designer.cs">
+      <DependentUpon>202407190147240_updateLecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407240250598_addmodeluser.cs" />
+    <Compile Include="Migrations\202407240250598_addmodeluser.designer.cs">
+      <DependentUpon>202407240250598_addmodeluser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407240256146_update-modeluser.cs" />
+    <Compile Include="Migrations\202407240256146_update-modeluser.designer.cs">
+      <DependentUpon>202407240256146_update-modeluser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407240306552_update-Model_User.cs" />
+    <Compile Include="Migrations\202407240306552_update-Model_User.designer.cs">
+      <DependentUpon>202407240306552_update-Model_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407240323071_update-usermodell1.cs" />
+    <Compile Include="Migrations\202407240323071_update-usermodell1.designer.cs">
+      <DependentUpon>202407240323071_update-usermodell1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407240342228_update-user.cs" />
+    <Compile Include="Migrations\202407240342228_update-user.designer.cs">
+      <DependentUpon>202407240342228_update-user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407270853283_updatenews.cs" />
+    <Compile Include="Migrations\202407270853283_updatenews.designer.cs">
+      <DependentUpon>202407270853283_updatenews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407290917504_updateBanner.cs" />
+    <Compile Include="Migrations\202407290917504_updateBanner.designer.cs">
+      <DependentUpon>202407290917504_updateBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Banner.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\ApplicationDBContext.cs" />
+    <Compile Include="Models\Lecturer.cs" />
+    <Compile Include="Models\Logs.cs" />
+    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\SubMenu.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.rtl.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-utilities.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-reboot.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.min.css.map" />
+    <Content Include="Content\CSS\Bootstrap\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <Content Include="Views\Home\SubIndex.cshtml" />
+    <Content Include="Views\Home\PageNotification.cshtml" />
+    <Content Include="Views\Home\PageSyctheticActivity.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\CreateAccount.cshtml" />
+    <Content Include="Views\Account\ForgetPassword.cshtml" />
+    <Content Include="Views\Account\ConfirmOtp.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="ImgPath\Banner\" />
+    <Folder Include="ImgPath\ImgBG\" />
+    <Folder Include="ImgPath\Lecturer\" />
+    <Folder Include="Views\AffiliatedEntities\" />
+    <Folder Include="Views\ApplicationDBContext\" />
+    <Folder Include="Views\Banner\" />
+    <Folder Include="Views\BoardOfDirectors\" />
+    <Folder Include="Views\Logs\" />
+    <Folder Include="Views\MenuModel\" />
+    <Folder Include="Views\News\" />
+    <Folder Include="Views\SecurityHelper\" />
+    <Folder Include="Views\SendMailHelper\" />
+    <Folder Include="Views\SubMenu\" />
+    <Folder Include="Views\Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202407110137280_add-data.resx">
+      <DependentUpon>202407110137280_add-data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407110359471_update.resx">
+      <DependentUpon>202407110359471_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407190135104_updateRequired.resx">
+      <DependentUpon>202407190135104_updateRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407190147240_updateLecturer.resx">
+      <DependentUpon>202407190147240_updateLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240250598_addmodeluser.resx">
+      <DependentUpon>202407240250598_addmodeluser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240256146_update-modeluser.resx">
+      <DependentUpon>202407240256146_update-modeluser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240306552_update-Model_User.resx">
+      <DependentUpon>202407240306552_update-Model_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240323071_update-usermodell1.resx">
+      <DependentUpon>202407240323071_update-usermodell1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407240342228_update-user.resx">
+      <DependentUpon>202407240342228_update-user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407270853283_updatenews.resx">
+      <DependentUpon>202407270853283_updatenews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407290917504_updateBanner.resx">
+      <DependentUpon>202407290917504_updateBanner.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\af.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ar.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ast.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\az.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bg.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bn.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\bs.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ca.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\cs.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\da.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\de-ch.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\de.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\el.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en-au.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en-gb.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\en.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\eo.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\es-co.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\es.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\et.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\eu.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fa.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fi.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\fr.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\gl.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\gu.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\he.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hi.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hr.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hu.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\hy.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\id.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\it.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ja.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\jv.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\kk.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\km.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\kn.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ko.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ku.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\lt.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\lv.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ms.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\nb.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ne.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\nl.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\no.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\oc.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pl.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pt-br.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\pt.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ro.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ru.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\si.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sk.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sl.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sq.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sr-latn.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sr.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\sv.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\th.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ti.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tk.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tr.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\tt.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ug.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\uk.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\ur.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\uz.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\vi.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\zh-cn.d.ts" />
+    <TypeScriptCompile Include="Content\ckeditor5-42.0.1\ckeditor5\translations\zh.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51038</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51038/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

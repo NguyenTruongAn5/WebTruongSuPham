@@ -1,0 +1,63 @@
+﻿@model PagedList.IPagedList<WEB_TRUONG_SP.Models.News>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Hoạt động";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--Wellcome-->
+<div class="container-fluid">
+    <div class="row welcome-banner">
+        <h1>Chào mừng bạn đến với DTHU</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="custom-search">
+            <input type="search" placeholder="Bạn muốn tìm gì?" />
+            <button><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-4 custom-box">
+                <a href="#">
+                    @if (item.ImagePath != null)
+                    {
+                        <img src=@Url.Content(item.ImagePath) class="custom-img" />
+                    }
+                    else
+                    {
+                        <img src="~/Content/IMG/Logo_Square.png" class="custom-img" />
+                    }
+                    <div class="bg-custom-box">
+                        <p>@item.Title</p>
+                        <span>@Html.Raw(@item.Summary)</span>
+                    </div>
+                    <div class="date-custom">
+                        <div>
+                            <i class="fa fa-calendar">@item.PublishDate</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+
+    </div>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("PageSyctheticActivity", new { page }), new PagedListRenderOptions
+           {
+               LiElementClasses = new string[] { "page-item" },
+               UlElementClasses = new[] { "pagination" },
+           })
+
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        CKEDITOR.replace('Summary');
+    });</script>
+

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Khôi Phục";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+<h2>Khôi phục bản tin</h2>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tiêu đề</th>
+                <th scope="col">Tóm tắt</th>
+                <th scope="col">Danh mục</th>
+                <th scope="col">Ngày Đăng</th>
+                <th scope="col">Khôi phục</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.Title</td>
+                    <td>@item.Summary</td>
+                    <td>@item.Category</td>
+                    <td>@item.PublishDate</td>
+                    <td>
+                        <a href="@Url.Action("Restore", "News", new { area = "Admin", id = item.ID })" class="btn btn-warning"
+                           onclick="return confirmDelete('@item.ID')">
+                            <i class="fa fa-recycle"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="btn btn-primary" style="">
+    @Html.ActionLink("Trở về", "Index", null, new { @class = "text-white" })
+</div>
+<script type="text/javascript">
+    function confirmDelete(itemId) {
+        if (confirm("Bạn có chắc muốn khôi phục bản tin này không?")) {
+            window.location.href = '@Url.Action("Restore", "News", new { area = "Admin" })' + '/' + itemId;
+        }
+        return false;
+    }
+</script>

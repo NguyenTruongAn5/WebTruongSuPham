@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Thông tin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--Wellcome-->
+<div class="container-fluid">
+    <div class="row welcome-banner">
+        <h1>Chào mừng bạn đến với DTHU</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 custom-sidebar">
+            CÓ THỂ BẠN QUAN TÂM
+
+            <ul class="custom-list">
+                @foreach (var item in ViewBag.Menu)
+                {
+                    <li>
+                        <a href="@Url.Action("SubIndex","Home", new {id=item.ID})">
+                            @item.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="col-8 custom-content">
+            <div class="date-view">
+                <div>
+                    <i class="fa fa-calendar">@Model.PublishDate</i>
+                </div>
+            </div>
+            <div class="content-wrap">
+                <p class="content-title">@Model.Title</p>
+                <span class="content-text">
+                    @Html.Raw(Model.Content)
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            CKEDITOR.replace('Content');
+        });
+</script>

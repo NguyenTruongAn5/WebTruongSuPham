@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+}
+<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: #e9ecef;
+    }
+</style>
+<h2>Kết quả tìm kiếm</h2>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tên GV</th>
+                <th scope="col">Chức vụ</th>
+                <th scope="col">Bằng cấp</th>
+                <th scope="col">Thông tin</th>
+                <th scope="col">Lĩnh vực</th>
+                <th scope="col">Hội đồng</th>
+                <th scope="col">Xóa</th>
+                <th scope="col">Sửa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.Name</td>
+                    <td>@item.Position</td>
+                    <td>@item.Degree</td>
+                    <td>@item.Information</td>
+                    <td>@item.Field</td>
+                    <td>@item.CouncilPosition</td>
+                    <td>
+                        <a href="@Url.Action("Remove", "Lecturer", new { area = "Admin", id = item.ID })" class="btn btn-danger"
+                           onclick="return confirmDelete('@item.ID')">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit","Lecturer",
+                                new { area = "Admin", id = item.ID })" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="btn btn-primary" style="">
+        @Html.ActionLink("Trở về", "Index", null, new { @class = "text-white" })
+    </div>
+</div>
+
+<script type="text/javascript">
+    function confirmDelete(itemId) {
+        if (confirm("Bạn có chắc muốn xóa GV này không?")) {
+            window.location.href = '@Url.Action("Remove", "Lecturer", new { area = "Admin" })' + '/' + itemId;
+        }
+        return false;
+    }
+</script>
+
+
